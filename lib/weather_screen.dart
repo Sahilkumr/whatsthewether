@@ -1,6 +1,8 @@
 import "dart:ui";
 
 import "package:flutter/material.dart";
+import "package:whats_the_weather/addition_weather_info.dart";
+import "package:whats_the_weather/future_weather_forecast.dart";
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -62,23 +64,21 @@ class WeatherScreen extends StatelessWidget {
             child: Text('Weather Forecast',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),)),
           const SizedBox(height: 5),
           
-           Row(
-            children: [
-               Card(
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    width: 100,  
-                    child: const Column(
-                      children: [
-                        Text('9:00',style: TextStyle(fontSize: 32 ,fontWeight: FontWeight.bold),),
-                        Icon(Icons.cloud,size: 48,),
-                        Text('111°C',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),                      
-                      ],
-                    ),
-                  ),
-                )
-            ],
-          ),
+           const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+             child:  Row(
+              children: [
+                FutureWeatherForecast(),
+                 FutureWeatherForecast(),
+                 FutureWeatherForecast(),
+                 FutureWeatherForecast(),
+                 FutureWeatherForecast(),
+                 FutureWeatherForecast(),
+                 FutureWeatherForecast(),
+
+              ],
+            ),
+           ),
           // const Placeholder(fallbackHeight: 120,),
     
           const SizedBox(height: 10),
@@ -87,11 +87,15 @@ class WeatherScreen extends StatelessWidget {
           const Align(
             alignment: Alignment.centerLeft,
             child: Text('More Information',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),)),
-          const SizedBox(height: 10),
-
-          
-          const Placeholder(fallbackHeight: 120,),
-
+          const SizedBox(height: 5),          
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+             AdditionalWeatherInfo(),
+             AdditionalWeatherInfo(),
+             AdditionalWeatherInfo(),
+            ],
+          )
         ]),
       ),
     );
