@@ -60,9 +60,26 @@ class WeatherScreen extends StatelessWidget {
           const Align(
             alignment: Alignment.centerLeft,
             child: Text('Weather Forecast',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),)),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           
-          const Placeholder(fallbackHeight: 120,),
+           Row(
+            children: [
+               Card(
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    width: 100,  
+                    child: const Column(
+                      children: [
+                        Text('9:00',style: TextStyle(fontSize: 32 ,fontWeight: FontWeight.bold),),
+                        Icon(Icons.cloud,size: 48,),
+                        Text('111°C',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),                      
+                      ],
+                    ),
+                  ),
+                )
+            ],
+          ),
+          // const Placeholder(fallbackHeight: 120,),
     
           const SizedBox(height: 10),
 
@@ -72,7 +89,8 @@ class WeatherScreen extends StatelessWidget {
             child: Text('More Information',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),)),
           const SizedBox(height: 10),
 
-          const Placeholder(fallbackHeight: 100,),
+          
+          const Placeholder(fallbackHeight: 120,),
 
         ]),
       ),
