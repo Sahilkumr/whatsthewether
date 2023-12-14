@@ -68,13 +68,13 @@ class WeatherScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
              child:  Row(
               children: [
-                FutureWeatherForecast(),
-                 FutureWeatherForecast(),
-                 FutureWeatherForecast(),
-                 FutureWeatherForecast(),
-                 FutureWeatherForecast(),
-                 FutureWeatherForecast(),
-                 FutureWeatherForecast(),
+                FutureWeatherForecast(time: '03:00',icon: Icons.cloud,temprature: '88',),
+                 FutureWeatherForecast(time: '06:00',icon: Icons.cloud,temprature: '8 8'),
+                 FutureWeatherForecast(time: '09:00',icon: Icons.cloud,temprature: '40'),
+                 FutureWeatherForecast(time: '12:00',icon: Icons.cloud,temprature: '31'),
+                 FutureWeatherForecast(time: '15:00',icon: Icons.cloud,temprature: '38'),
+                 FutureWeatherForecast(time: '18:00',icon: Icons.cloud,temprature: '35'),
+                 FutureWeatherForecast(time: '21:00',icon: Icons.cloud,temprature: '28'),
 
               ],
             ),
@@ -91,9 +91,9 @@ class WeatherScreen extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-             AdditionalWeatherInfo(),
-             AdditionalWeatherInfo(),
-             AdditionalWeatherInfo(),
+             AdditionalWeatherInfo(icon: Icons.water_drop, label: 'Humidity',value: '91'),
+             AdditionalWeatherInfo(icon: Icons.air, label: 'AQI',value: '121'),
+             AdditionalWeatherInfo(icon: Icons.u_turn_left, label: 'Pressure',value: '40'),
             ],
           )
         ]),

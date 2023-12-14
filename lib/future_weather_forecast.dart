@@ -1,9 +1,14 @@
 
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class FutureWeatherForecast  extends StatelessWidget {
-  const FutureWeatherForecast ({super.key});
+  final String time;
+  final IconData icon;
+  final String temprature;
+  const FutureWeatherForecast ({super.key,required time,required icon,required temprature});
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +16,11 @@ class FutureWeatherForecast  extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(10),
                     width: 100,  
-                    child: const Column(
+                    child:  Column(
                       children: [
-                        Text('9:00',style: TextStyle(fontSize: 32 ,fontWeight: FontWeight.bold),),
-                        Icon(Icons.cloud,size: 48,),
-                        Text('111°C',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),                      
+                        Text(time,style: const TextStyle(fontSize: 32 ,fontWeight: FontWeight.bold),),
+                        Icon(icon),
+                        Text(temprature,style:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),                      
                       ],
                     ),
                   ),
